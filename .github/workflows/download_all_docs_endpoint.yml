@@ -31,7 +31,7 @@ jobs:
               jq -r .rows[].key < _all_docs.json | LC_ALL=C sort -u > all_package_names.txt;
               if [[ $(wc -l all_package_names.txt) -eq 0 ]]; then exit 1; fi;
               git config --global user.name "github-actions[bot]" && \
-              git config --global user.email "933164984+github-actions[bot]@users.noreply.github.com" && \
+              git config --global user.email "github-actions[bot]@users.noreply.github.com" && \
               git add all_package_names.txt && \
               git commit -m "Update package names" && \
               git pull --rebase && \
